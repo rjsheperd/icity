@@ -1,0 +1,41 @@
+#+TITLE: Linked GTFS
+#+AUTHOR: RJ Sheperd
+
+** Instructions
+
+Mappings were originally provided [[https://rml.io/yarrrml/][YARRRML]] format. See [[https://rml.io/yarrrml/tutorial/getting-started/][this tutorial]] to understand how YARRRML is converted to RML.
+
+*** Convert YARRRML to R2RML (.ttl)
+
+1. Install ~yarrrml-parser~:
+   #+BEGIN_SRC bash
+     npm i @rmlio/yarrrml-parser -g
+   #+END_SRC
+
+2. Convert yarrrml (~.yaml~) to RML (~.ttl~)
+   #+BEGIN_SRC bash
+     yarrrml-parser -i mapping.yml -o gtfs-mapping.ttl
+   #+END_SRC
+
+*** Load GTFS Data into Postgres
+1. Load GTFS Schema
+   #+BEGIN_SRC bash
+     psql -f schema.sql
+   #+END_SRC
+
+2. Download & Unzip your dataset
+   #+BEGIN_SRC bash
+     curl -sLO http://developer.trimet.org/schedule/gtfs.zip
+     unzip gtfs.zip -d gtfs
+   #+END_SRC
+
+3. Load the GTFS data into Postgres:
+   #+BEGIN_SRC bash
+     psql -U gtfs -d gtfs -v import_dir='gtfs' -f import.sql
+   #+END_SRC
+
+*** TODO Map GTFS Data to Triples
+
+** References 
+- [[https://github.com/OpenTransport/linked-gtfs][Linked GTFS Ontoloy Source]]
+- [[https://doi.org/10.1016/j.websem.2020.100596][GTFS to Linked-GTFS Mappings (See Appendix C)]]

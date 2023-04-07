@@ -1,0 +1,30 @@
+\c gtfs
+
+SELECT import_gtfs_table(:import_dir, 'agency');
+SELECT import_gtfs_table(:import_dir, 'areas');
+SELECT import_gtfs_table(:import_dir, 'booking_rules');
+SELECT import_gtfs_table(:import_dir, 'calendar');
+SELECT import_gtfs_table(:import_dir, 'calendar_attributes');
+SELECT import_gtfs_table(:import_dir, 'calendar_dates');
+SELECT import_gtfs_table(:import_dir, 'directions');
+SELECT import_gtfs_table(:import_dir, 'fare_attributes');
+SELECT import_gtfs_table(:import_dir, 'fare_rider_categories');
+SELECT import_gtfs_table(:import_dir, 'fare_rules');
+SELECT import_gtfs_table(:import_dir, 'farezone_attributes');
+SELECT import_gtfs_table(:import_dir, 'feed_info');
+SELECT import_gtfs_table(:import_dir, 'frequencies');
+SELECT import_gtfs_table(:import_dir, 'linked_datasets');
+SELECT import_gtfs_table(:import_dir, 'location_groups');
+SELECT import_gtfs_table(:import_dir, 'realtime_routes');
+SELECT import_gtfs_table(:import_dir, 'rider_categories');
+SELECT import_gtfs_table(:import_dir, 'route_attributes');
+SELECT import_gtfs_table(:import_dir, 'routes');
+SELECT import_gtfs_table(:import_dir, 'runcut');
+SELECT import_gtfs_table(:import_dir, 'shapes');
+SELECT import_gtfs_table(:import_dir, 'stop_attributes');
+SELECT import_gtfs_table(:import_dir, 'stop_times');
+SELECT import_gtfs_table(:import_dir, 'stops');
+SELECT import_gtfs_table(:import_dir, 'timetable_stop_order');
+SELECT import_gtfs_table(:import_dir, 'timetables');
+SELECT import_gtfs_table(:import_dir, 'transfers');
+SELECT import_gtfs_table(:import_dir, 'trips');
